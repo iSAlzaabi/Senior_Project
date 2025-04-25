@@ -1,0 +1,10 @@
+<connections>
+    <!-- Main highway continuity -->
+    <connection from="A2B" to="B2C" fromLane="0" toLane="0"/>
+    <connection from="A2B" to="B2C" fromLane="1" toLane="1"/>
+    <connection from="A2B" to="B2C" fromLane="2" toLane="2"/>
+	
+	<!-- On-ramp merges into rightmost lane of highway -->
+	<connection from="E2F" to="F2B" fromLane="0" toLane="0"/>
+	<connection from="F2B" to="B2C" fromLane="0" toLane="0"/>
+</connections>

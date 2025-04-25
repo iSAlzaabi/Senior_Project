@@ -1,0 +1,27 @@
+<routes>
+    <!-- MAIN HIGHWAY ROUTE (A, B, C) -->
+    <route id="highway_route" edges="A2B B2C"/>
+
+    <!-- ON-RAMP ROUTE (E, F, B, C) -->
+    <route id="onramp_route" edges="E2F F2B B2C"/>
+
+    <!-- Vehicles -->
+	<vType id="car" vClass="passenger" 
+    accel="2.6" decel="4.5" emergencyDecel="9.0" sigma="0.5"
+    carFollowModel="IDM"
+	tau="1.0"
+	minGap="2.0"
+    lcStrategic="1.5"
+    lcCooperative="1.5"
+	lcSpeedGain="1.5"
+	jmIgnoreFoeProb="0.0"
+	jmStoplineGap="2.0"/>
+
+    <!-- Main highway flow -->
+    <flow id="highway_flow" type="car" route="highway_route" 
+          begin="0" end="3600" period="0.36" departSpeed="random" departLane="random"/>  <!-- 10,000 veh/hour -->
+
+    <!-- On-ramp flow -->
+    <flow id="ramp_flow" type="car" route="onramp_route" 
+          begin="0" end="3600" period="1.3" departSpeed="random" departLane="random"/>  <!-- ~5000 veh/hour -->
+</routes>

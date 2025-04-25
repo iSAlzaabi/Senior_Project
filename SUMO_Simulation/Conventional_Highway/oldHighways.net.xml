@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-04-25 16:11:15 by Eclipse SUMO netconvert Version 1.22.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="oldHighways.nod.xml"/>
+        <edge-files value="oldHighways.edg.xml"/>
+        <connection-files value="oldHighways.con.xml"/>
+    </input>
+
+    <output>
+        <output-file value="oldHighways.net.xml"/>
+    </output>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,18.00" convBoundary="0.00,0.00,1000.00,18.00" origBoundary="0.00,-18.00,1000.00,0.00" projParameter="!"/>
+
+    <edge id=":B_0" function="internal">
+        <lane id=":B_0_0" index="0" speed="24.99" length="16.56" shape="472.88,5.43 476.15,6.93 479.42,8.41 483.35,9.55 488.62,10.00"/>
+    </edge>
+    <edge id=":B_1" function="internal">
+        <lane id=":B_1_0" index="0" speed="27.77" length="16.62" shape="472.00,10.00 488.62,10.00"/>
+        <lane id=":B_1_1" index="1" speed="27.77" length="16.62" shape="472.00,13.20 488.62,13.20"/>
+        <lane id=":B_1_2" index="2" speed="27.77" length="16.62" shape="472.00,16.40 488.62,16.40"/>
+    </edge>
+    <edge id=":F_0" function="internal">
+        <lane id=":F_0_0" index="0" speed="22.22" length="0.61" shape="455.00,-1.60 455.18,-1.60 455.31,-1.58 455.43,-1.55 455.59,-1.49"/>
+    </edge>
+
+    <edge id="A2B" from="A" to="B" priority="-1">
+        <lane id="A2B_0" index="0" speed="27.77" length="472.00" shape="0.00,10.00 472.00,10.00"/>
+        <lane id="A2B_1" index="1" speed="27.77" length="472.00" shape="0.00,13.20 472.00,13.20"/>
+        <lane id="A2B_2" index="2" speed="27.77" length="472.00" shape="0.00,16.40 472.00,16.40"/>
+    </edge>
+    <edge id="B2C" from="B" to="C" priority="-1">
+        <lane id="B2C_0" index="0" speed="27.77" length="511.38" shape="488.62,10.00 1000.00,10.00"/>
+        <lane id="B2C_1" index="1" speed="27.77" length="511.38" shape="488.62,13.20 1000.00,13.20"/>
+        <lane id="B2C_2" index="2" speed="27.77" length="511.38" shape="488.62,16.40 1000.00,16.40"/>
+    </edge>
+    <edge id="E2F" from="E" to="F" priority="-1">
+        <lane id="E2F_0" index="0" speed="22.22" length="455.00" shape="0.00,-1.60 455.00,-1.60"/>
+    </edge>
+    <edge id="F2B" from="F" to="B" priority="-1">
+        <lane id="F2B_0" index="0" speed="22.22" length="18.62" shape="455.59,-1.49 472.88,5.43"/>
+    </edge>
+
+    <junction id="A" type="dead_end" x="0.00" y="18.00" incLanes="" intLanes="" shape="0.00,18.00 0.00,8.40"/>
+    <junction id="B" type="zipper" x="500.00" y="18.00" incLanes="F2B_0 A2B_0 A2B_1 A2B_2" intLanes=":B_0_0 :B_1_0 :B_1_1 :B_1_2" shape="488.62,18.00 488.62,8.40 485.26,8.27 482.81,7.90 480.83,7.27 478.90,6.40 476.59,5.29 473.47,3.94 472.29,6.91 472.00,8.40 472.00,18.00">
+        <request index="0" response="0010" foes="0010" cont="0"/>
+        <request index="1" response="0001" foes="0001" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="C" type="dead_end" x="1000.00" y="18.00" incLanes="B2C_0 B2C_1 B2C_2" intLanes="" shape="1000.00,8.40 1000.00,18.00"/>
+    <junction id="E" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-3.20"/>
+    <junction id="F" type="priority" x="455.00" y="0.00" incLanes="E2F_0" intLanes=":F_0_0" shape="455.00,0.00 456.19,-2.97 455.77,-3.13 455.61,-3.17 455.45,-3.19 455.26,-3.20 455.00,-3.20">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <connection from="A2B" to="B2C" fromLane="0" toLane="0" via=":B_1_0" dir="s" state="Z"/>
+    <connection from="A2B" to="B2C" fromLane="1" toLane="1" via=":B_1_1" dir="s" state="M"/>
+    <connection from="A2B" to="B2C" fromLane="2" toLane="2" via=":B_1_2" dir="s" state="M"/>
+    <connection from="E2F" to="F2B" fromLane="0" toLane="0" via=":F_0_0" dir="s" state="M"/>
+    <connection from="F2B" to="B2C" fromLane="0" toLane="0" via=":B_0_0" dir="s" state="Z"/>
+
+    <connection from=":B_0" to="B2C" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":B_1" to="B2C" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":B_1" to="B2C" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":B_1" to="B2C" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":F_0" to="F2B" fromLane="0" toLane="0" dir="s" state="M"/>
+
+</net>
