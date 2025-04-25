@@ -1,0 +1,19 @@
+<sumoConfiguration>
+
+    <input>
+        <net-file value="highway.net.xml"/>
+        <route-files value="highway.rou.xml"/>
+        <additional-files value="highway.add.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <step-length value="0.1"/>
+    </time>
+
+    <processing>
+        <lateral-resolution value="0.5"/>
+        <time-to-teleport value="-1"/>
+    </processing>
+
+</sumoConfiguration>
